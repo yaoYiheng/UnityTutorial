@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	}
-
+    //这个函数会在每个固定的物理时间步被调用一次。这是放置游戏基本物理行为代码的地方。
     private void FixedUpdate()
     {
         //从键盘获取输入
