@@ -15,8 +15,18 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public Boundary boundary;
 
+    //待实例化的游戏对象, 即子弹的预制Prefab.
+    public GameObject shot;
+    //子弹发射器的Transform属性
+    public Transform shotSpawn;
+
     //斜度
     public float tilt;
+
+    //射击速率
+    public float fireRate;
+    //射击间隔
+    private float nextFire;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +35,18 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//Time.time 从游戏开始到到现在所用的时间
+		if (Input.GetButton("Fire1") && Time.time > nextFire)
+        {
+            //限制发射频率
+            nextFire = Time.time + fireRate;
+            //实例化子弹, 子弹的位置跟旋转跟随shotSpawn, shotSpawn是跟随飞机的
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+
+
+        }
+
 
 
 	}
