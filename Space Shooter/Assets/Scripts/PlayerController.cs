@@ -17,8 +17,9 @@ public class PlayerController : MonoBehaviour {
 
     //待实例化的游戏对象, 即子弹的预制Prefab.
     public GameObject shot;
-    //子弹发射器的Transform属性
-    public Transform shotSpawn;
+	//子弹发射器的Transform属性
+	//can receive the transform position and rotation by making use of the shotSpawn variable.
+	public Transform shotSpawn;
 
     //斜度
     public float tilt;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour {
             //实例化子弹, 子弹的位置跟旋转跟随shotSpawn, shotSpawn是跟随飞机的
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 
+            GetComponent<AudioSource>().Play();
 
         }
 
