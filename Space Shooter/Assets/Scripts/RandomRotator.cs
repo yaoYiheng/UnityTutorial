@@ -12,6 +12,7 @@ public class RandomRotator : MonoBehaviour {
     {
         rigidBody = GetComponent<Rigidbody>();
 
+        //改变刚体的角速度
         rigidBody.angularVelocity = Random.insideUnitSphere * tumble;
     }
 

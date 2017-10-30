@@ -17,9 +17,14 @@ public class GameController : MonoBehaviour
 
     //每一波之间的间隔
     public float spawnWaves;
+
+    public GUIText sourtText;
+    private int score;
     // Use this for initialization
     void Start()
     {
+        score = 0;
+        updateScore(); 
         //所有IEnumerator类型函数必须使用”StartCoroutine”这个函数触发，不能单独使用
         StartCoroutine(spawnWave());
     }
@@ -28,6 +33,14 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void addScore(int newScoreValue){
+        score += newScoreValue;
+        updateScore();
+    }
+    public void updateScore(){
+        sourtText.text = "Score: " + score;
     }
 
 	//所有使用yield的函数必须将返回值类型设置为IEnumerator类型
