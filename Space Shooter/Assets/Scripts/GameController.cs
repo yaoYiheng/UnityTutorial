@@ -19,10 +19,21 @@ public class GameController : MonoBehaviour
     public float spawnWaves;
 
     public GUIText sourtText;
+
+    public GUIText restartText;
+    public GUIText gameOverText;
+
     private int score;
+
+
+    private bool gameOver;
+    private bool restart;
+
     // Use this for initialization
     void Start()
     {
+        gameOver = false;
+        restart = false;
         score = 0;
         updateScore(); 
         //所有IEnumerator类型函数必须使用”StartCoroutine”这个函数触发，不能单独使用
