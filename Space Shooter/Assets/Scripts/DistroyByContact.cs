@@ -35,6 +35,7 @@ public class DistroyByContact : MonoBehaviour {
 
             //实例化碰撞体的爆炸效果, 碰撞体(other)的位置与旋转
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+            gameController.GameOver();
         }
 		//检查到碰撞后, 销毁相关碰撞物.
 		Destroy(other.gameObject);

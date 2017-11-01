@@ -18,14 +18,14 @@ public class GameController : MonoBehaviour
     //每一波之间的间隔
     public float spawnWaves;
 
+    //用来显示文字
     public GUIText sourtText;
-
     public GUIText restartText;
     public GUIText gameOverText;
 
     private int score;
 
-
+    //添加两个变量已记录游戏开始以及重新开始
     private bool gameOver;
     private bool restart;
 
@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     {
         gameOver = false;
         restart = false;
+        gameOverText.text = "";
+        restartText.text = "";
         score = 0;
         updateScore(); 
         //所有IEnumerator类型函数必须使用”StartCoroutine”这个函数触发，不能单独使用
@@ -43,9 +45,21 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(restart){
+            if(Input.GetKeyDown(KeyCode.R)){
+                //方法过期
+                Application.LoadLevel(Application.loadedLevel);
+            }
+        }
     }
 
+    //游戏结束
+    public void GameOver(){
+
+        gameOverText.text = "Game Over";
+        gameOver = true;
+        
+    }
     public void addScore(int newScoreValue){
         score += newScoreValue;
         updateScore();
@@ -73,6 +87,13 @@ public class GameController : MonoBehaviour
 
             //每一波陨石间的间隔.
             yield return new WaitForSeconds(spawnWaves);
+
+            //当游戏结束时修改显示, 并修改重新开始的棋子, 并退出循环.
+            if(gameOver){
+                restartText.text = "Press R for Restart";
+                restart = true;
+                break;
+            }
         }
 
     }
