@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject spawn;
+    //hazard数组, 用来装载hazard
+    public GameObject[] hazards;
     public Vector3 spawnValue;
 
     //每一波出多少个
@@ -77,9 +78,10 @@ public class GameController : MonoBehaviour
         while(true){
             
 			for (int i = 0; i < spawnCount; i++){
+                GameObject hazard = hazards[Random.Range(0, hazards.Length)];
 				Vector3 spawnPosition = new Vector3(Random.Range(-spawnValue.x, spawnValue.x), spawnValue.y, spawnValue.z);
 				Quaternion rotation = Quaternion.identity;//no rotation
-				Instantiate(spawn, spawnPosition, rotation);
+				Instantiate(hazard, spawnPosition, rotation);
 				
 				yield return new WaitForSeconds(spawnWait);
 				
