@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\DistoryByTime.cs" />
     <Compile Include="Assets\Scripts\DistroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DistroyByContact.cs" />
+    <Compile Include="Assets\Scripts\EvasiveManenver.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
