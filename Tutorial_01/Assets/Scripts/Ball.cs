@@ -17,4 +17,10 @@ public class Ball : MonoBehaviour {
 	void Update () {
 		
 	}
+    //游戏对象抛出画面外时被调用的方法
+    private void OnBecameInvisible()
+    {
+        //删除游戏对象
+        Destroy(gameObject);
+    }
 }
