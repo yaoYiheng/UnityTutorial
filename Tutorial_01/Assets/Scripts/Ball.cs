@@ -10,7 +10,7 @@ public class Ball : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
 
-        rb.velocity = new Vector3(-8.0f, 8.0f, 0.0f);
+        rb.velocity = new Vector3(-10.0f, 9.0f, 0.0f);
 	}
 	
 	// Update is called once per frame
