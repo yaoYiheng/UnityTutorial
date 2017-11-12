@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public float jumpSpeed;
-    private bool isLanding = false;  //着陆标记
+    public bool isLanding = false;  //着陆标记
 
     private Rigidbody rb;
 	// Use this for initialization
@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
                 //当起跳之后标记为非着陆
                 isLanding = false;
                 rb.velocity = Vector3.up * jumpSpeed;
+                //Debug.Break();//暂停游戏
             }
         }
 
@@ -34,6 +35,10 @@ public class Player : MonoBehaviour {
     //与其他游戏对象发生碰撞时调用
     private void OnCollisionEnter(Collision collision)
     {
-        isLanding = true;
+        //只有当碰撞的物体为Floor时, 才需要标记为着陆
+        if(collision.gameObject.tag == "Floor"){
+            
+			isLanding = true;
+        }
     }
 }
