@@ -1,11 +1,5 @@
 ﻿<Properties StartupConfiguration="{448108B1-E75A-AEAD-3DE6-894B36EAD063}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="8" Column="11" />
-      <File FileName="Assets/Scripts/Ball.cs" Line="13" Column="44" />
-      <File FileName="Assets/Scripts/Launcher.cs" Line="18" Column="3" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
